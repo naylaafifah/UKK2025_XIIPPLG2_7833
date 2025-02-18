@@ -32,7 +32,7 @@ include "koneksi.php";
                 <nav class="sb-sidenav accordion" id="sidenavAccordion" style="backgroud-color: #FFEFE8">
                     <div class="sb-sidenav-menu" style="background-color :rgb(238, 203, 188)">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">Home</div>
                             <a class="nav-link" href="?" style="color: black;">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                My ToDoList
@@ -43,11 +43,11 @@ include "koneksi.php";
                             ?>
                             <a class="nav-link" href="?page=kategori" style="color: black;">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                 Kategori Kegiatan
+                                 Kegiatan Formal
                             </a>
                             <a class="nav-link" href="?page=buku" style="color: black;">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
-                                Tasks
+                                Kegiatan Non Formal
                             </a>
                             <?php
                             }else{
@@ -64,7 +64,7 @@ include "koneksi.php";
                             ?>
                             <a class="nav-link" href="?page=laporan" style="color: black;">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
-                                Laporan Kegiatan
+                                Catatan Kegiatan
                             </a>
                             <?php
                             }
