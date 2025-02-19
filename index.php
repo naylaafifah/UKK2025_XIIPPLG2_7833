@@ -1,6 +1,6 @@
 <?php
 include "koneksi.php";
-    if(!isset($_SESSION['user'])){
+    if(!isset($_SESSION['users'])){
         header('location:login.php');
     }
 ?>
@@ -19,72 +19,44 @@ include "koneksi.php";
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color :rgb(238, 203, 188)">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html" style="color: black;" >ToDoList</a>
-            <!-- Sidebar Toggle-->
+        <nav class="sb-topnav navbar navbar-expand navbar-light" style="background-color: #FFCDB2">
+            <a class="navbar-brand ps-3" href="index.html"><h4>My ToDoList</h4></a>
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar-->
         </nav>
-        
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion" id="sidenavAccordion" style="backgroud-color: #FFEFE8">
-                    <div class="sb-sidenav-menu" style="background-color :rgb(238, 203, 188)">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu"  style="background-color: #FFCDB2">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Home</div>
-                            <a class="nav-link" href="?" style="color: black;">
+                            <div class="sb-sidenav-menu-heading "></div>
+                            <a class="nav-link" href="?">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                               My ToDoList
+                                Home
                             </a>
-                            <div class="sb-sidenav-menu-heading">Navigasi</div>
-                            <?php
-                            if($_SESSION['user']['level'] !='peminjam'){
-                            ?>
-                            <a class="nav-link" href="?page=kategori" style="color: black;">
+                            <a class="nav-link" href="?page=categories">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                 Kegiatan Formal
+                                Kegiatan
                             </a>
-                            <a class="nav-link" href="?page=buku" style="color: black;">
+                            <a class="nav-link" href="?page=tasks">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
-                                Kegiatan Non Formal
+                               Catatan Kegiatan
                             </a>
-                            <?php
-                            }else{
-                            ?>
-                            <a class="nav-link" href="?page=ulasan" style="color: black;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-comment"></i></div>
-                                Catatan Kegiatan
-                            </a>
-                            <?php
-                            }
-                            ?>
-                            <?php
-                            if($_SESSION['user']['level'] !='peminjam'){
-                            ?>
-                            <a class="nav-link" href="?page=laporan" style="color: black;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
-                                Catatan Kegiatan
-                            </a>
-                            <?php
-                            }
-                            ?>
-                            <a class="nav-link" href="logout.php" style="color: black;">
+                            <a class="nav-link" href="logout.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-power-off"></i></div>
                                 Logout
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <div class="sb-sidenav-footer" style="background-color: #FFCDB2">
                         <div class="small">Logged in as:</div>
-                        <?php echo $_SESSION['user']['nama']; ?>
+                        <?php echo $_SESSION['users']['name']; ?>
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <?php
+			<?php
 
                         $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         if(file_exists($page . '.php')){
@@ -95,16 +67,15 @@ include "koneksi.php";
                         ?>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
+                <footer class="py-4 mt-auto" style="background-color: #FFCDB2" >
+                    <div class="container-fluid px-4" >
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; ToDoList 2025</div>
+                            <div class="text-muted">Copyright &copy; 2025 Naylafifah</div>
                         </div>
                     </div>
                 </footer>
-            </div>           
+            </div>
         </div>
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -113,6 +84,4 @@ include "koneksi.php";
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
-    
 </html>
- 

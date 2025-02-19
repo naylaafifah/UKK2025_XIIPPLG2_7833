@@ -1,5 +1,5 @@
 <?php
-    include "koneksi.php";
+include "koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Register Ke ToDoList</title>
+        <title>Register Ke Perpustakaan Digital</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body style="background-color :rgb(242, 204, 206)">
+    <body style="background-color: lightpink">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -21,64 +21,51 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Register ToDoList</h3></div>
-                                    <div class="card-body">
+                                    <div class="card-header" style="background-color: lightpink"><h3 class="text-center font-weight-light my-4">Registasi</h3></div>
+                                    <div class="card-body" style="background-color:cornsilk">
                                         <?php
-                                            if(isset($_POST['register'])) {
-                                                $nama = $_POST['nama'];
-                                                $email = $_POST['email'];
-                                                $alamat = $_POST['alamat'];
-                                                $no_telepon = $_POST['no_telepon'];
-                                                $username = $_POST['username'];
-                                                $level = $_POST['level'];
-                                                $password = md5($_POST['password']);
+                                        if(isset($_POST['register'])) {
+                                            $username = $_POST['username'];
+                                            $email = $_POST['email'];
+                                            $name = $_POST['name'];
+                                            $password = md5($_POST['password']); 
+                                            
+                                            $insert = mysqli_query($koneksi ,"INSERT INTO users(username,email,name,password) VALUES('$username','$email','$name','$password')");
 
-                                                $insert = mysqli_query($koneksi, "INSERT INTO user(nama,email,alamat,no_telepon,username,password,level) VALUES('$nama','$email','$alamat','$no_telepon','$username','$password','$level')");
-
-                                                if($insert){
-                                                    echo '<script>alert("Selamat, register berhasil. Silahkan Login"); location.href="login.php"</script>';
-                                                }else{
-
-                                                    echo '<script>alert("Register gagal, silahkan ulangi kembali.");</script>';
-                                                }
+                                            if($insert){
+                                                echo '<script>alert("Selamat, Register Berhasil. Silahkan Login."); location.href="login.php"</script>';
+                                            }else{
+                                                echo '<script>alert("Register Gagal, Silahkan Ulangi Kembali");</script>';
                                             }
+                                        }
                                         ?>
                                         <form method="post">
-                                            <div class="form-group">
-                                                <label class="small mb-1">Nama Lengkap</label>
-                                                <input class="form-control py-4" type="text" required name="nama" placeholder="Masukkan Nama Lengkap"/>
+                                            <div class="form-floating mb-5 ">
+                                                <input class="form-control" type="text" required name="username" placeholder="Username" />
+                                                <label >Username</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">Email</label>
-                                                <input class="form-control py-4" type="text" required name="email" placeholder="Masukkan Email"/>
+                                            <div class="form-floating mb-5">
+                                                <input class="form-control" type="email" required name="email" placeholder="Email" />
+                                                <label >Email</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">No. Telepon</label>
-                                                <input class="form-control py-4" type="text" required name="no_telepon" placeholder="Masukkan No. Telepon"/>
+                                            <div class="form-floating mb-5">
+                                                <input class="form-control" type="name" required name="name" placeholder="Name" />
+                                                <label >Name</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">Alamat</label>
-                                                <textarea name="alamat" rows="5" required class="form-control"></textarea>
+                                            <div class="form-floating mb-5">
+                                                <input class="form-control" id="inputPassword" required name="password" type="password" placeholder="Password" />
+                                                <label for="inputPassword">Password</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">Username</label>
-                                                <input class="form-control py-4" type="username" required name="username" placeholder="Masukkan Username"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control py-4" id="inputPassword" required type="password" name="password" placeholder="Masukkan Password"/>
-                                            </div>
-                                            </div>
-                                            <div class=" form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-outline-secondary" type="submit" name="register" value="register">Register</button>
                                                 <a class="btn btn-outline-secondary" href="login.php">Login</a>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center">
-                                        <div class="small">
-                                            &copy; 2025 ToDoList.
-                                        </div>
+                                    <div class="card-footer text-center py-3" style="background-color: lightpink">
+                                        <div class="small"><a href="register.html">
+                                            &copy; 2025 Naylafifah
+                                        </a></div>
                                     </div>
                                 </div>
                             </div>
