@@ -3,9 +3,9 @@
         <a href="?page=categories_tambah" class="btn btn-outline-secondary">+ Tambah Kegiatan</a>
                <table class="table table-bordered">
                 <tr>
-                    <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>No Telepon</th>
+                    <th>Nama kegiatan</th>
+                    <th>No</th>
+                    <th>Tanggal Kegiatan</th>
                     <th>Aksi</th>
                 </tr>
 

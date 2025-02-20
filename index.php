@@ -19,16 +19,16 @@ include "koneksi.php";
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-light" style="background-color: #FFCDB2">
+        <nav class="sb-topnav navbar navbar-expand navbar-light" style="background-color: rgb(198, 209, 255)">
             <a class="navbar-brand ps-3" href="index.html"><h4>My ToDoList</h4></a>
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu"  style="background-color: #FFCDB2">
+                    <div class="sb-sidenav-menu"  style="background-color:rgb(198, 209, 255)">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading "></div>
+                            <div class="sb-sidenav-menu-heading"  style="color: black"></div>
                             <a class="nav-link" href="?">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Home
@@ -47,7 +47,7 @@ include "koneksi.php";
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer" style="background-color: #FFCDB2">
+                    <div class="sb-sidenav-footer" style="background-color:rgb(198, 209, 255)">
                         <div class="small">Logged in as:</div>
                         <?php echo $_SESSION['users']['name']; ?>
                     </div>
@@ -67,10 +67,10 @@ include "koneksi.php";
                         ?>
                     </div>
                 </main>
-                <footer class="py-4 mt-auto" style="background-color: #FFCDB2" >
+                <footer class="py-4 mt-auto" style="background-color:rgb(198, 209, 255)" >
                     <div class="container-fluid px-4" >
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; 2025 Naylafifah</div>
+                            <div class="text-muted">Copyright &copy; 2025 </div>
                         </div>
                     </div>
                 </footer>

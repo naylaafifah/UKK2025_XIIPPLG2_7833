@@ -1,4 +1,4 @@
-<h1 class="mt-4">Tasks</h1>
+<h1 class="mt-4">Catatan Kegiatan</h1>
 <div class="card">
     <div class="card-body">
         <div class="row">
@@ -6,8 +6,8 @@
                 <a href="?page=tasks_tambah" class="btn btn-outline-secondary">+ Tambah Data</a>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
-                        <th>Categories</th>
-                        <th>Tasks</th>
+                        <th>Catatan Kegiatan</th>
+                        <th>Nama Kegiatan</th>
                         <th>User</th>
                         <th>Status</th>
                     </tr>

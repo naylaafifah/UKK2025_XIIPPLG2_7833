@@ -13,7 +13,7 @@ include "koneksi.php";
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body style="background-color: lightpink">
+    <body style="background-color: rgb(198, 209, 255)">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -21,8 +21,8 @@ include "koneksi.php";
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header" style="background-color: lightpink"><h3 class="text-center font-weight-light my-4">Login </h3></div>
-                                    <div class="card-body" style="background-color: lightpink">
+                                    <div class="card-header" style="background-color: rgb(198, 209, 255)"><h3 class="text-center font-weight-light my-4">Login </h3></div>
+                                    <div class="card-body" style="background-color: cornsilk">
                                         <?php
                                         if(isset($_POST['login'])) {
                                             $username = $_POST['username'];
@@ -53,7 +53,7 @@ include "koneksi.php";
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer text-center py-3" style="background-color: lightpink">
+                                    <div class="card-footer text-center py-3" style="background-color: rgb(198, 209, 255)">
                                         <div class="small"><a href="register.html">
                                             &copy; 2025 Naylafifah
                                         </a></div>

@@ -4,7 +4,7 @@
         $id = $_POST['id'];
         $user_id = $_POST['user_id'];
 
-    $query = mysqli_query($koneksi, "INSERT INTO categories(id,category,user_id) values('$id','$category','$user_id')");
+        $query = mysqli_query($koneksi, "INSERT INTO categories(id,category,user_id) values('$id','$category','$user_id')");
 
         if($query) {
         echo '<script>alert("Tambah Data Berhasil")</script>';
@@ -16,7 +16,7 @@
 
 ?>
 <div class="container-fluid">
-    <h1 class="mt-4">categories</h1>
+    <h1 class="mt-4">category</h1>
             <form method="post">
                 <table class="table table-bordered">
                     <tr>
@@ -36,14 +36,13 @@
                         <td>:</td>
                         <td><input class="form-control" type="number" step="0" name="user_id"></td>
                     </tr>
-                    <tr>
-                        <td>
-                            <button type="submit" class="btn btn-outline-secondary" name="submit" value="submit">Simpan</button>
-                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                            <a href="?page=categories" class="btn btn-outline-secondary">kembali</a>
-                        </td>
-                    </tr>
                 </table>
+                <tr>
+                     <td>
+                        <button type="submit" class="btn btn-outline-secondary" name="submit" value="submit">Simpan</button>
+                        <button type="submit" class="btn btn-outline-secondary" name="submit" value="submit">Reset</button>
+                        <a href="?page=categories" class="btn btn-outline-secondary">kembali</a>
+                     </td>
+                 </tr>
             </form>
-</div>
+        </div>
